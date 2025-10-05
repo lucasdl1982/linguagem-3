@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Conceitos Básicos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: #0f1724;
+      color: #e6f0f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .card {
+      max-width: 750px;
+      background: rgba(255,255,255,0.03);
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 22px;
+      color: #7dd3fc;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #7dd3fc;
+    }
+    p {
+      color: #9aa4b2;
+      line-height: 1.6;
+      font-size: 15px;
+      margin: 8px 0;
+    }
+    pre {
+      background: rgba(255,255,255,0.07);
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      overflow-x: auto;
+      margin-top: 8px;
+      color: #e6f0f6;
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+    a {
+      display: inline-block;
+      margin-top: 18px;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #9aa4b2;
+      transition: 0.2s;
+    }
+    a:hover {
+      color: #7dd3fc;
+      border-color: rgba(125,211,252,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Conceitos Básicos da Web</h1>
+
+    <h2>HTML</h2>
+    <p>
+      O <strong>HTML</strong> (HyperText Markup Language) é a linguagem de marcação que estrutura o conteúdo de uma página.
+      Ele define títulos, parágrafos, links, imagens e outros elementos.
+    </p>
+    <pre><code>&lt;h1&gt;Olá Mundo&lt;/h1&gt;
+&lt;p&gt;Este é meu primeiro parágrafo em HTML&lt;/p&gt;</code></pre>
+
+    <h2>CSS</h2>
+    <p>
+      O <strong>CSS</strong> (Cascading Style Sheets) é responsável pela aparência visual da página.
+      Com ele, controlamos cores, fontes, espaçamento e até layouts responsivos.
+    </p>
+    <pre><code>p {
+  color: blue;
+  font-size: 18px;
+  text-align: center;
+}</code></pre>
+
+    <h2>JavaScript</h2>
+    <p>
+      O <strong>JavaScript</strong> é a linguagem de programação que adiciona interatividade às páginas.
+      Com ele podemos manipular elementos, responder a ações do usuário e integrar dados dinâmicos.
+    </p>
+    <pre><code>&lt;button onclick="alert('Olá Mundo!')"&gt;
+Clique aqui
+&lt;/button&gt;</code></pre>
+
+    <a href="index.html">← Voltar</a>
+  </div>
+</body>
+</html>
