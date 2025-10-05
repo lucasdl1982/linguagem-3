@@ -101,6 +101,17 @@
       .menu{flex-direction:row;flex-wrap:wrap;justify-content:center}
       .main{min-height:420px}
     }
+
+    .card.disabled {
+  opacity: 0.4;             /* deixa opaco */
+  pointer-events: none;     /* desabilita clique */
+  user-select: none;        /* evita seleção de texto */
+}
+.card.disabled a {
+  color: var(--muted);      /* link também fica apagado */
+  text-decoration: none;
+}
+
   </style>
 </head>
 <body>
@@ -187,17 +198,24 @@
         <div class="grid" role="list">
 
           <!-- exemplo de card para cada atividade -->
-          <article class="card" role="listitem">
-            <h3>Atividade 1 — Tabela</h3>
+          <article class="card disabled" role="listitem">
+            <h3>Atividade 1 — Guerra dos Navegadores</h3>
             <p>Desenvolver um arquivo HTML estático com estrutura semântica.</p>
             <a href="Primeira_Parte/7Tabela.html">Abrir arquivo</a>
           </article>
 
-          <article class="card">
+          <article class="card disabled" role="listitem">
             <h3>Atividade 2 — Curriculum</h3>
-            <p>Formulário com validação e layout responsivo.</p>
+            <p>Fazer curruculum utilizando HTML com Css. Entregar arquivo HTML com CSS e teste de caixa preta.</p>
             <a href="Primeira_Parte/CurriculumCss.html">Abrir arquivo</a>
           </article>
+
+           <article class="card disabled" role="listitem">
+            <h3>Atividade 3 — Desenvolver Páginas</h3>
+            <p>Páginas com links internos, externos e locais.</p>
+            <a href="Primeira_Parte/7Tabela.html">Abrir arquivo</a>
+          </article>
+
 
           <article class="card">
             <h3>Atividade 3 — Formulário</h3>
@@ -206,8 +224,8 @@
           </article>
 
           <article class="card">
-            <h3>Atividade 4 — Matricula</h3>
-            <p>Manipulação DOM e comportamento dinâmico.</p>
+            <h3>Atividade 12 — Matricula</h3>
+            <p>Criar formulário da Fatec Mauá.</p>
             <a href="Primeira_Parte/Matricula.html">Abrir arquivo</a>
 
           </article>
@@ -219,7 +237,7 @@
 
            </article>
            <article class="card">
-            <h3>Atividade 4 — Certificado</h3>
+            <h3>Atividade 6 — Certificado</h3>
             <p>Aqui o certificado de Ameaças Cibernéticas</p>
             <a href="Certificados/Cyber_Threat_Management_Diogo Lima Lucas.pdf">Abrir arquivo</a>
           </article>
@@ -227,7 +245,7 @@
 
            <article class="card">
             <h3>Atividade 20 — While 2</h3>
-            <p>Manipulação DOM e comportamento dinâmico.</p>
+            <p>Exercícos de JavaScript.</p>
             <a href="Segunda_Parte/while2.html">Abrir arquivo</a>
           </article>
         </div>
