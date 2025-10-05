@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrícula de Disciplinas - FATEC MAUÁ</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1, h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  form {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  fieldset {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  legend {
+    font-weight: bold;
+    padding: 0 10px;
+  }
+
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .semester {
+    margin-top: 20px;
+  }
+
+  .disciplinas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .disciplinas-grid label {
+    font-weight: normal;
+    background-color: #f1f1f1;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .disciplinas-grid input[type="checkbox"] {
+    margin-right: 8px;
+  }
+
+  .disciplinas-grid label:hover {
+    background-color: #e0e0e0;
+  }
+
+  .buttons-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    gap: 10px;
+  }
+
+  .buttons-group button {
+    flex: 1;
+    padding: 10px;
+    background-color: #0077cc;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .buttons-group button:hover {
+    background-color: #005fa3;
+  }
+
+  #mensagem {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: green;
+  }
+</style>
+</head>
+<body>
+
+<h1>Matrícula de Disciplinas - FATEC</h1>
+
+<form id="formMatricula">
+  <fieldset>
+    <legend>Dados Pessoais</legend>
+    <label for="nome">Nome *</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="email">E-mail *</label>
+    <input type="email" id="email" name="email" required>
+  </fieldset>
+
+  <fieldset>
+    <legend>Seleção de Disciplinas</legend>
+
+    <div class="buttons-group">
+      <button type="button" onclick="selecionarTodas()">Selecionar Todas</button>
+      <button type="button" onclick="limparSelecao()">Limpar Seleção</button>
+    </div>
+
+    <!-- 1º Semestre -->
+    <div class="semester">
+      <h2>1º Semestre</h2>
+      <div class="disciplinas-grid">
+        <label><input type="checkbox" name="disciplinas" value="linguagem1"> Linguagem de Programação I</label>
+        <label><input type="checkbox" name="disciplinas" value="contabilidade"> Contabilidade</label>
+        <label><input type="checkbox" name="disciplinas" value="calculo"> Cálculo I</label>
+        <label><input type="checkbox" name="disciplinas" value="comunicacao"> Comunicação</label>
+      </div>
+    </div>
+
+    <!-- 2º Semestre -->
+    <div class="semester">
+      <h2>2º Semestre</h2>
+      <div class="disciplinas-grid">
+        <label><input type="checkbox" name="disciplinas" value="linguagem2"> Linguagem de Programação II</label>
+        <label><input type="checkbox" name="disciplinas" value="gestaoFinanceira"> Gestão Financeira</label>
+        <label><input type="checkbox" name="disciplinas" value="estatistica"> Estatística</label>
+        <label><input type="checkbox" name="disciplinas" value="marketing"> Marketing</label>
+      </div>
+    </div>
+
+    <!-- 3º Semestre -->
+    <div class="semester">
+      <h2>3º Semestre</h2>
+      <div class="disciplinas-grid">
+        <label><input type="checkbox" name="disciplinas" value="linguagem3"> Linguagem de Programação III</label>
+        <label><input type="checkbox" name="disciplinas" value="metodologia"> Metodologia Científica</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <button type="submit">Matricular</button>
+  <div id="mensagem"></div>
+</form>
+
+<script>
+function selecionarTodas() {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(cb => cb.checked = true);
+}
+
+function limparSelecao() {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(cb => cb.checked = false);
+}
+
+document.getElementById('formMatricula').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const nome = document.getElementById('nome').value.trim();
+  const disciplinas = Array.from(document.querySelectorAll('input[name="disciplinas"]:checked'))
+                           .map(cb => cb.parentElement.textContent.trim());
+  
+  if (disciplinas.length === 0) {
+    alert("Selecione ao menos uma disciplina.");
+    return;
+  }
+
+  const mensagem = `Aluno(a) ${nome} matriculado(a) nas disciplinas: ${disciplinas.join(', ')}`;
+  document.getElementById('mensagem').textContent = mensagem;
+});
+</script>
+
+</body>
+</html>
