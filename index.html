@@ -16,18 +16,20 @@
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,var(--bg) 0%, #071027 100%);
-      color:#e6f0f6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:28px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg) 0%, #071027 100%);
+      color: #e6f0f6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 28px;
+      display: flex;
+      justify-content: center;
+      /* permite rolagem vertical */
+      align-items: flex-start;
+      min-height: 100vh;
+      overflow-y: auto;
     }
-
     .container{
       width:100%;
       max-width:1100px;
