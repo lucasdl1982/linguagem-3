@@ -1,0 +1,20 @@
+<html>
+<head><title>Trabalhando do Objeto DATE</title>
+</head>
+<body>
+<script language="JavaScript"> // Trabalhando com Objeto DATE
+    var DATA = new Date();
+    var dia = DATA.getDate();
+    var mes = DATA.getMonth();
+    var ano = DATA.getYear();
+
+    mes += 1;
+
+    if (ano < 1000){
+        ano += 1900;
+    }
+
+    document.write(dia +' / '+ mes +' / '+ ano);
+</script>
+</body>
+</html>

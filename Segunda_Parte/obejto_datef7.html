@@ -1,0 +1,33 @@
+<html>
+<head><title>Trabalhando do Objeto DATE - formatado</title>
+</head>
+<body>
+<script language="JavaScript"> //Trabalhando com Objeto DATE - formatado
+    var DATA = new Date();
+    var dia = DATA.getDate();
+    var mes = DATA.getMonth();
+    var ano = DATA.getYear();
+
+    //incremento mes
+    mes += 1;
+
+    //converto dia e mes para String concatenar com '0'
+    dia = dia.toString();
+    mes = mes.toString();
+
+    if (dia.length == 1){
+        dia = '0' + dia;
+    }
+
+    if (mes.length == 1){
+        mes = '0' + mes;
+    }
+
+    if (ano < 1000){
+        ano += 1900;
+    }
+
+    document.write(dia +'/'+ mes +'/'+ ano);
+</script>
+</body>
+</html>
